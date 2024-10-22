@@ -1,0 +1,14 @@
+.pixelify-sans-vincent {
+    font-family: "Pixelify Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.title-container {
+    display: inline-block;
+}
+
+.title {
+    font-size: 5em;
+}
