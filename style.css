@@ -12,3 +12,11 @@
 .title {
     font-size: 5em;
 }
+
+.home {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url(AI\ Generator\ Image.jpeg);
+    background-size: cover;
+}
