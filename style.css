@@ -1,3 +1,7 @@
+body {
+    margin: 0;
+}
+
 .pixelify-sans-vincent {
     font-family: "Pixelify Sans", sans-serif;
     font-optical-sizing: auto;
@@ -11,12 +15,57 @@
 
 .title {
     font-size: 5em;
+    border-right: 5px solid;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    animation:
+        typing 2s steps(15),
+        cursor .4s step-end infinite alternate;
+}
+
+@keyframes cursor {
+    50% {
+        border-color: transparent;
+    }
+}
+
+@keyframes typing {
+    from {
+        width: 0
+    }
 }
 
 .home {
     display: flex;
     align-items: center;
     justify-content: center;
+    height: 140vh;
+    background-color: #404041;
+    opacity: 1;
+    background-image:  radial-gradient(#5045cf 0.35000000000000003px, transparent 0.35000000000000003px), radial-gradient(#5045cf 0.35000000000000003px, #404041 0.35000000000000003px);
+    background-size: 14px 14px;
+    background-position: 0 0,7px 7px;;
+}
+
+.home-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+    height: 90vh;
     background-image: url("AI\ Generator\ Image.jpeg");
     background-size: cover;
+    background-position: bottom;
+    border-radius: 20px;
+    box-shadow: 0 0 50px 15px #66c2f4 ;
+}
+
+.test {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    height: 100vh;
+    background-color: rgb(249, 132, 82);
 }
