@@ -15,37 +15,52 @@
 </head>
 
 <body>
-    <div class="floating-menu">
-        <div class="menu-item" data-tooltip="Return to home">
-            <div><img src="icons/arrow-up.png" alt=""></div>
+
+    <div id="floating-menu">
+        <div class="menu-item" onclick="scrollToSection('section1')" data-tooltip="Return to home">
+            <img src="icons/arrow-up.png" alt="" class="menu-icon">
         </div>
-        <div class="menu-item" data-tooltip="À propos de moi">
-            <div><img src="icons/about.png" alt=""></div>
+        <div class="menu-item" onclick="scrollToSection('section2')" data-tooltip="À propos de moi">
+            <img src="icons/about.png" alt="" class="menu-icon">
         </div>
         <div class="menu-item" data-tooltip="Expériences">
-            <div><img src="icons/experience.png" alt=""></div>
+            <img src="icons/experience.png" alt="" class="menu-icon">
         </div>
         <div class="menu-item" data-tooltip="Sparkle">
-            <div><img src="icons/project.png" alt=""></div>
+            <img src="icons/project.png" alt="" class="menu-icon">
         </div>
     </div>
 
-    <header>
-        <a href="#home" class="links logo poppins-medium">Vincent BULLION</a>
+    <header class="pixelify-sans-vincent">
+        <a onclick="scrollToSection('section1')" id="logo" class="poppins-semibold">Vincent BULLION</a>
         <nav>
-            <a class="links" href="#about">À propos</a>
-            <a class="links" href="#experiences">Expériences</a>
-            <a class="links" href="#projects">Projets</a>
+            <a class="links" onclick="scrollToSection('section2')">À propos de moi</a>
+            <a class="links" >Expériences</a>
+            <a class="links" >Projets</a>
         </nav>
     </header>
-    <section class="home">
-        <div class="home-container">
-            <div class="title-container">
-                <h2 class="title pixelify-sans-vincent">Vincent Bullion</h2>
+
+    <section id="section1">
+        <div id="screen">
+            <div id="screen-container">
+                <div id="title-container">
+                    <h2 id="title" class="pixelify-sans-vincent">Vincent Bullion</h2>
+                    <p id="sub-title" class="pixelify-sans-vincent">Développeur full stack</p>
+                </div>
             </div>
         </div>
     </section>
-    <section class="test">
+    <section id="section2">
+        <p>
+            Blablibloblbliu
+        </p>
+    </section>
+    <section id="section3">
+        <p>
+            Blablibloblbliu
+        </p>
+    </section>
+    <section id="section4">
         <p>
             Blablibloblbliu
         </p>
