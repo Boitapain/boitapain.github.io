@@ -1,5 +1,24 @@
 const screenContainer = document.querySelector('.test');
 
+document.addEventListener("DOMContentLoaded", () => {
+    const links = document.querySelectorAll('.links');
+    const menuToggle = document.getElementById("menuToggle");
+    const navMenu = document.getElementById("header-nav");
+
+    links.forEach(link => {
+        link.addEventListener("click", () => {
+            navMenu.classList.toggle("active");
+        });
+        
+    });
+
+    menuToggle.addEventListener("click", () => {
+        navMenu.classList.toggle("active");
+    });
+});
+
+
+
 window.addEventListener('scroll', () => {
     const scrollPosition = window.scrollY;
     const shrinkHeight = 15000; // Target height when the header shrinks (px)
@@ -17,7 +36,7 @@ window.addEventListener('scroll', () => {
         const sectionTop = section.offsetTop;
         const sectionHeight = section.offsetHeight;
 
-        if(scrollPosition >= sectionTop -300 && scrollPosition < sectionTop + sectionHeight){
+        if (scrollPosition >= sectionTop - 300 && scrollPosition < sectionTop + sectionHeight) {
             document.body.style.backgroundColor = getSectionColor(index);
         }
 
@@ -25,7 +44,7 @@ window.addEventListener('scroll', () => {
 });
 
 function getSectionColor(index) {
-    const colors = ['#fef9f2', '#bae6fd', '#bbf7d0', '#f5d0fe'];
+    const colors = ['#fef9f2', '#a5f3fc', '#bbf7d0', '#f5d0fe', '#fef08a'];
     return colors[index];
 }
 

@@ -21,6 +21,10 @@ header>nav {
     justify-content: space-evenly;
 }
 
+#menuToggle {
+    display: none;
+}
+
 #logo {
     font-size: 1.5em;
     font-weight: bolder;
@@ -32,12 +36,16 @@ header>nav {
     text-decoration: underline;
 }
 
+.links:hover {
+    cursor: pointer;
+}
+
 #title-container {
     display: inline-block;
 }
 
 #title {
-    font-size: 4em;
+    font-size: 4.5rem;
     border-right: 5px solid;
     width: 100%;
     white-space: nowrap;
@@ -53,27 +61,10 @@ header>nav {
     overflow: hidden;
     text-align: center;
     animation: blink 1s infinite;
+    font-size: 3rem;
 }
 
-@keyframes cursor {
-    50% {
-        border-color: transparent;
-    }
-    100% {
-        border-color: black;
-    }
-}
-
-@keyframes typing {
-    from {
-        width: 0;
-    }
-    to {
-        width: 100%;
-    }
-}
-
-section{
+section {
     background: transparent;
 }
 
@@ -82,34 +73,6 @@ section{
     z-index: 20;
 }
 
-#screen {
-    margin-top: 10vh;
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    height: 100vh;
-}
-
-#screen-container {
-    /*Handle flex behavior of the continer*/
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    /* Position and size of the "screen" */
-    width: 70%;
-    height: 70vh;
-
-    /* What the screen displays */
-    background-image: url("AI\ Generator\ Image.jpeg");
-    background-size: cover;
-    background-position: bottom;
-
-    /* What the "screen" look like */
-    border-radius: 20px;
-    box-shadow: 0 0 50px 15px #d4d4d4;
-}
-
 #section2 {
     display: flex;
     align-items: center;
@@ -117,6 +80,7 @@ section{
     width: auto;
     height: 100vh;
 }
+
 #section3 {
     display: flex;
     align-items: center;
@@ -124,7 +88,16 @@ section{
     width: auto;
     height: 100vh;
 }
+
 #section4 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    height: 100vh;
+}
+
+#section5 {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -189,4 +162,63 @@ section{
 /* Show the tooltip when hovering over the menu item */
 .menu-item:hover::after {
     opacity: 1;
+}
+
+
+@media (max-width: 1023px) {
+    #title {
+        font-size: 3.5rem;
+    }
+
+    #sub-title {
+        font-size: 2rem;
+    }
+
+    #screen-container {
+        height: 40vh;
+        width: 80%;
+    }
+}
+
+@media (max-width: 767px) {
+    body {
+        width: 100%;
+    }
+
+    #title {
+        font-size: 2.5rem;
+    }
+
+    #sub-title {
+        font-size: 1rem;
+    }
+
+    #screen-container {
+        height: 30vh;
+        width: 80%;
+    }
+
+    #floating-menu {
+        display: none;
+    }
+
+    #menuToggle {
+        display: inline-block;
+        cursor: pointer;
+    }
+
+    #header-nav {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        height: 40vh;
+        background-color: rgba(203, 203, 203, 0.915);
+        position: absolute;
+        top: 10vh;
+    }
+
+    #header-nav.active {
+        display: flex;
+    }
 }

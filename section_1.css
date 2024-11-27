@@ -1,0 +1,61 @@
+@keyframes cursor {
+    50% {
+        border-color: transparent;
+    }
+
+    100% {
+        border-color: black;
+    }
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 100%;
+    }
+}
+
+#screen {
+    margin-top: 10vh;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    height: 100vh;
+}
+
+#screen-container {
+    /*Handle flex behavior of the continer*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    /* Position and size of the "screen" */
+    width: 70%;
+    height: 70vh;
+
+    /* What the screen displays */
+    background-image: url("AI\ Generator\ Image.jpeg");
+    background-size: cover;
+    background-position: bottom;
+
+    /* What the "screen" look like */
+    border-radius: 20px;
+    box-shadow: 0 0 50px 15px #d4d4d4;
+}
+
+@media (max-width: 1023px) {
+    #screen-container {
+        height: 40vh;
+        width: 80%;
+    }
+}
+
+@media (max-width: 767px) {
+    #screen-container {
+        height: 30vh;
+        width: 80%;
+    }
+}
