@@ -14,6 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     menuToggle.addEventListener("click", () => {
         navMenu.classList.toggle("active");
+        document.querySelector('header').style.b
     });
 });
 
@@ -21,27 +22,28 @@ document.addEventListener("DOMContentLoaded", () => {
 
 window.addEventListener('scroll', () => {
     const scrollPosition = window.scrollY;
-    const shrinkHeight = 15000; // Target height when the header shrinks (px)
-    const initialHeight = window.innerHeight; // Full-screen height
-
-    // Calculate the new height as the user scrolls
-    const newHeight = Math.max(initialHeight - scrollPosition, shrinkHeight);
-
-    if (newHeight > shrinkHeight) {
-        screenContainer.style.height = `${newHeight}px`;
-    }
-
     const sections = document.querySelectorAll('section');
-    sections.forEach((section, index) => {
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.offsetHeight;
+    const menuItems = document.querySelectorAll('.menu-icon');
 
-        if (scrollPosition >= sectionTop - 300 && scrollPosition < sectionTop + sectionHeight) {
+    sections.forEach((section, index) => {
+        const sectionTop = section.offsetTop; // Distance of the section from the top of the document
+        const sectionHeight = section.offsetHeight; // Height of the section
+
+        // Reset scaling of menu icons
+        menuItems[index].style.transform = 'scale(1)';
+
+        // Check if the current scroll position is within the section's visible range
+        if (scrollPosition >= sectionTop - sectionHeight * 0.3 && scrollPosition < sectionTop + sectionHeight * 0.7) {
             document.body.style.backgroundColor = getSectionColor(index);
         }
 
+        // Highlight the menu icon if the section is fully in view
+        if (scrollPosition >= sectionTop -200 && scrollPosition < sectionTop + sectionHeight) {
+            menuItems[index].style.transform = 'scale(1.3)';
+        }
     });
 });
+
 
 function getSectionColor(index) {
     const colors = ['#fef9f2', '#a5f3fc', '#bbf7d0', '#f5d0fe', '#fef08a'];
@@ -52,7 +54,7 @@ function scrollToSection(sectionId) {
     const section = document.getElementById(sectionId);
     if (sectionId == "section1") {
         window.scrollTo({
-            top: section.offsetTop - 200, // Adjust for navbar height
+            top: section.offsetTop -300, // Adjust for navbar height
             behavior: 'smooth',
         });
     } else {

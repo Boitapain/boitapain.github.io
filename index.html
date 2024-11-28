@@ -3,10 +3,11 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Vincent Bullion</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="section_1.css">
+    <link rel="stylesheet" href="section_5.css">
     <link rel="stylesheet" href="fonts.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap');
@@ -14,7 +15,7 @@
     </style>
 </head>
 
-<body>
+<body class="poppins-medium">
 
     <div id="floating-menu">
         <div class="menu-item" onclick="scrollToSection('section1')" data-tooltip="Return to home">
@@ -33,18 +34,20 @@
             <img src="icons/contact.png" alt="" class="menu-icon">
         </div>
     </div>
-
     <header class="pixelify-sans-vincent">
         <a onclick="scrollToSection('section1')" id="logo" class="poppins-semibold">Vincent BULLION</a>
         <button class="nav-icon" id="menuToggle">☰</button>
-        <nav id="header-nav">
-            <a class="links" onclick="scrollToSection('section2')">À propos de moi</a>
-            <a class="links" onclick="scrollToSection('section3')">Expériences</a>
-            <a class="links" onclick="scrollToSection('section4')">Projets</a>
-            <a class="links" onclick="scrollToSection('section5')">Contacts</a>
-        </nav>
+        <div id="header-nav">
+            <nav >
+                <a class="links" onclick="scrollToSection('section2')">À propos de moi</a>
+                <a class="links" onclick="scrollToSection('section3')">Expériences</a>
+                <a class="links" onclick="scrollToSection('section4')">Projets</a>
+                <a class="links" onclick="scrollToSection('section5')">Contacts</a>
+            </nav>
+        </div>
+            
     </header>
-    
+
 
     <section id="section1">
         <div id="screen">
@@ -71,10 +74,24 @@
             Blablibloblbliu
         </p>
     </section>
-    <section id="section5">
-        <p>
-            Blablibloblbliu
-        </p>
+    <section id="section5" >
+        <div id="footer" >
+            <h1 class="poppins-semibold">Où me trouver :</h1>
+            <ul id="contact_links">
+                <li>
+                    <a href="mailto:vincentbullion@icloud.com">E-mail <img src="icons/contacts/mail.png"/></a>
+                </li>
+                <li>
+                    <a>+33 7 81 65 64 98 <img src="icons/contact.png"/></a>
+                </li>
+                <li>
+                    <a href="https://github.com/Boitapain">GitHub <img src="icons/contacts/github.png"/></a>
+                </li>
+                <li>
+                    <a href="https://www.linkedin.com/in/vincent-bullion-07786a220/">LinkedIn <img src="icons/contacts/linkedin.png"/></a>
+                </li>
+            </ul>
+        </div>
     </section>
     <script src="script.js" defer></script>
 </body>
