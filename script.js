@@ -64,3 +64,35 @@ function scrollToSection(sectionId) {
         });
     }
 }
+
+const picture = document.querySelector("#picture");
+const max_angle = 10; // Maximum rotation angle
+const activationHeight = window.innerHeight * 0.8; // 50vh height range
+
+document.addEventListener("mousemove", (e) => {
+    applyHoverEffect(e, picture);
+});
+
+function applyHoverEffect(event, element) {
+    // Get the element's position and size
+    const rect = element.getBoundingClientRect();
+
+    // Calculate the distance from the mouse pointer to the element's center
+    const elementCenterX = rect.left + rect.width / 2;
+    const elementCenterY = rect.top + rect.height / 2;
+
+    // Check if the mouse is within the height range
+    if (event.clientY <= activationHeight) {
+        // Calculate the offsets for rotation
+        const offsetX = ((event.clientX - elementCenterX) / rect.width) * max_angle;
+        const offsetY = ((event.clientY - elementCenterY) / rect.height) * max_angle;
+
+        // Apply rotation
+        element.style.setProperty("--rotateX", -1 * offsetY + "deg");
+        element.style.setProperty("--rotateY", offsetX + "deg");
+    } else {
+        // Reset rotation if outside the height range
+        element.style.setProperty("--rotateX", "0deg");
+        element.style.setProperty("--rotateY", "0deg");
+    }
+}

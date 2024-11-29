@@ -45,6 +45,12 @@
     box-shadow: 0 0 50px 15px #d4d4d4;
 }
 
+#presentation{
+    margin: 15vh 0;
+    width: 100%;
+    text-align: center;
+}
+
 @media (max-width: 1023px) {
     #screen-container {
         height: 40vh;
