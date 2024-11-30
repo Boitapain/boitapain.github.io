@@ -1,4 +1,8 @@
 #section5 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: auto;
     padding: 10vh 0 5vh 0;
 }
 
@@ -10,7 +14,8 @@
 }
 
 #footer>h1 {
-    width: 100%;
+    white-space: nowrap;
+    margin-right: 10vh;
 }
 
 #contact_links {
@@ -43,9 +48,10 @@
     height: 25px;
 }
 
-@media (max-width: 1180px) {
+@media (max-width: 1023px) {
     #footer>h1 {
         text-align: center;
+        margin:0 0 5vh 0;
     }
     #footer {
         display: flex;

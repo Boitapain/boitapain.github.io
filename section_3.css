@@ -1,0 +1,138 @@
+#section3{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+}
+
+#section3> h1{
+    text-align: center;
+}
+
+#exp-container{
+    width: 100%;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.exp-item{
+    display:flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-evenly;
+    margin: 15vh 0;
+}
+
+.exp-item:nth-child(even){
+    flex-direction: row-reverse;
+}
+
+.exp-img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 55vh;
+    height: 40vh; /* Match the image or set a fixed size */
+    border-radius: 25px;
+
+    transform-style: preserve-3d;
+    perspective: 5000px;
+    transform: 
+        perspective(5000px)
+        rotateY(var(--rotateY))
+        rotateX(var(--rotateX));
+    transition: transform 0.1s ease-out;
+
+    position: relative;
+}
+
+.exp-img::before {
+    content: "";
+    position: absolute;
+    inset: 0.75rem;
+    background: black;
+    transform: translateZ(-49px);
+    filter: blur(15px);
+    opacity: 0.5;
+    border-radius: inherit;
+}
+
+.exp-img::after {
+    content: "";
+    position: absolute;
+    inset: -1rem;
+    border: solid rgb(160, 160, 160) 1px;
+    background: 
+        linear-gradient(rgb(160, 160, 160) 1px, transparent 1px),  /* Horizontal grid lines */
+        linear-gradient(90deg, rgb(160, 160, 160) 1px, transparent 1px); /* Vertical grid lines */
+    background-size: 30px 30px; /* Adjust the size for grid spacing */
+    transform: translateZ(-50px);
+    opacity: 0.4;
+    border-radius: inherit;
+}
+
+.exp-img > img {
+    width: 50vh;
+    height: 30vh;
+    height: auto;
+    border-radius: 25px;
+}
+
+.exp-description{
+    width:50vh;
+}
+
+.exp-description > p{
+    font-weight: 600;
+}
+.exp-description > ul > li{
+    margin-bottom: 2vh;
+}
+
+.exp-title{
+    display: flex;
+}
+
+.exp-title > img{
+    width: 40px;
+    height: 40px;
+    align-self: center;
+    margin-right: 3vh;
+}
+
+@media (max-width: 1023px) {
+    .exp-item{
+        flex-direction: column;
+        align-items: center;
+    }
+    .exp-item:nth-child(even){
+        flex-direction: column;
+    }
+
+    .exp-img{
+        width: 40vh;
+        height: 30vh;
+    }
+    .exp-img > img{
+        width: 35vh;
+    }
+
+    .exp-description{
+        margin-top: 5vh;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+
+}
+
+@media (max-width: 734px) {
+    .exp-title{
+        flex-direction: column;
+    }
+    .exp-title > img{
+        margin: 0;
+    }
+}

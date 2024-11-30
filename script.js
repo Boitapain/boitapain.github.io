@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
         link.addEventListener("click", () => {
             navMenu.classList.toggle("active");
         });
-        
+
     });
 
     menuToggle.addEventListener("click", () => {
@@ -38,7 +38,7 @@ window.addEventListener('scroll', () => {
         }
 
         // Highlight the menu icon if the section is fully in view
-        if (scrollPosition >= sectionTop -200 && scrollPosition < sectionTop + sectionHeight) {
+        if (scrollPosition >= sectionTop - 200 && scrollPosition < sectionTop + sectionHeight) {
             menuItems[index].style.transform = 'scale(1.3)';
         }
     });
@@ -46,7 +46,7 @@ window.addEventListener('scroll', () => {
 
 
 function getSectionColor(index) {
-    const colors = ['#fef9f2', '#a5f3fc', '#bbf7d0', '#f5d0fe', '#fef08a'];
+    const colors = ['#fef9f2', '#f5d0fe', '#bfdbfe', '#a5f3fc', '#fef08a'];
     return colors[index];
 }
 
@@ -54,7 +54,7 @@ function scrollToSection(sectionId) {
     const section = document.getElementById(sectionId);
     if (sectionId == "section1") {
         window.scrollTo({
-            top: section.offsetTop -300, // Adjust for navbar height
+            top: section.offsetTop - 300, // Adjust for navbar height
             behavior: 'smooth',
         });
     } else {
@@ -67,8 +67,9 @@ function scrollToSection(sectionId) {
 
 const picture = document.querySelector("#picture");
 const max_angle = 10; // Maximum rotation angle
-const activationHeight = window.innerHeight * 0.8; // 50vh height range
+const activationHeight = window.innerHeight * 0.8;
 
+let timeout;
 document.addEventListener("mousemove", (e) => {
     applyHoverEffect(e, picture);
 });
