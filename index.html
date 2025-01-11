@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="section_1.css">
     <link rel="stylesheet" href="section_2.css">
     <link rel="stylesheet" href="section_3.css">
+    <link rel="stylesheet" href="section_4.css">
     <link rel="stylesheet" href="section_5.css">
     <link rel="stylesheet" href="fonts.css">
     <style>
@@ -62,7 +63,7 @@
         </div>
         <div id="presentation">
             <h3>Jeune développer full stack</h3>
-            <p>Passionné de développement web et mobile, de sport, et de bonne bière!</p>
+            <p>Passionné de développement web et mobile 🖥️<br>de sport 💪<br>et de cuisine 🍳</p>
         </div>
     </section>
     <section id="section2">
@@ -82,7 +83,7 @@
                     <h3>Compétences</h3>
                     <p>Python, Next.js, React, Kotlin</p>
                     <p>SQL, NoSQL, C#, .NET</p>
-                    <p>VBA, Python Bash, Powershell</p>
+                    <p>VBA, Bash, Powershell</p>
                     <p>Anglais B2</p>
                 </div>
             </div>
@@ -157,7 +158,8 @@
                     <p>Maintenance évolutive d'une application web</p>
                     <ul>
                         <li>Créations de 21 pages pour l’application Air Courtage grâce au modèle MVC.</li>
-                        <li>Utilisation du Framework .NET pour ajouter et recréer des pages d’une ancienne version de l’application</li>
+                        <li>Utilisation du Framework .NET pour ajouter et recréer des pages d’une ancienne version de
+                            l’application</li>
                         <li>Utilisation de différentes bibliothèques Js (Chart.js, etc)</li>
                     </ul>
                 </div>
@@ -200,9 +202,60 @@
         </div>
     </section>
     <section id="section4">
-        <p>
-            Blablibloblbliu
-        </p>
+        <h2>Mes Projets</h2>
+        <div class="projects-container">
+            <div class="project-card" onclick="document.getElementById('project1-dialog').showModal()">
+                <img src="icons/projects/disease_track_1.png" alt="Projet 1">
+                <h3>Disease Track</h3>
+                <h5>Application ETL pour pandémies</h5>
+            </div>
+            <div class="project-card" onclick="document.getElementById('project2-dialog').showModal()">
+                <img src="icons/projects/calculo_1.png" alt="Calculo"> 
+                <h3>Calculo</h3>
+            </div>
+            <div class="project-card" onclick="document.getElementById('project3-dialog').showModal()">
+                <video controls>
+                    <source src="media/portfolio_1.mp4" type="video/mp4">
+                </video>
+                <h3>Mon portfolio</h3>
+            </div>
+        </div>
+    
+        <!-- Dialogs -->
+        <dialog id="project1-dialog" class="dialog">
+            <div class="dialog-content">
+                <span class="close" onclick="document.getElementById('project1-dialog').close()">&times;</span>
+                <h3>Disease Track</h3>
+                <p>Disease track est une application ETL faites avec streamlit pour importer et visualiser des données sur des pandémies au format .csv.<br><br>Ces données sont préalablement filtrées sur un notebook avant d'être importer sur l'application. Une fois importer elles sont enregistrées en BDD et les utilisateurs peuvent analyser les données.</p>
+                <img src="icons/projects/disease_track_2.png" alt="API Disease Track" style="width: 75vh; height: auto;align-content: center;">
+                <br>
+                <p>Une API ainsi que sa documentation son disponible afin d'intégrer ce projet plus facilement à des outils gouvernementaux.</p>
+                <a href="https://github.com/Boitapain/MSPR1" target="_blank">Voir sur GitHub</a>
+            </div>
+        </dialog>
+        <dialog id="project2-dialog" class="dialog">
+            <div class="dialog-content">
+                <span class="close" onclick="document.getElementById('project2-dialog').close()">&times;</span>
+                <h3>Calculo</h3>
+                <video controls>
+                    <source src="media/calculo_2.mp4" type="video/mp4">
+                </video>
+                <p>Calculo est une reproduction fidèle de l'application calculatrice de Apple.<br><br>Le projet à été réalisé à la fois en Kotlin et en Swift pour apprendre ces deux langages.</p>
+                <a href="https://github.com/Boitapain/Calculo" target="_blank">Le projet Kotlin</a>
+                <br>
+                <a href="https://github.com/Boitapain/Calculo-bis" target="_blank">Le projet Swift</a>
+            </div>
+        </dialog>
+        <dialog id="project3-dialog" class="dialog">
+            <div class="dialog-content">
+                <span class="close" onclick="document.getElementById('project3-dialog').close()">&times;</span>
+                <h3>Mon portfolio</h3>
+                <img src="icons/projects/portfolio_2.png" alt="Portfolio">
+                <p>Ce portfolio est une vitrine de mes compétences et de mes projets. Il a été réalisé en utilisant uniquement HTML, CSS et JavaScript.<br><br>Le design est entièrement responsive, assurant une expérience utilisateur fluide sur tous les types d'appareils.<br><br>Des animations subtiles ont été intégrées pour rendre la navigation plus agréable et interactive.</p>
+                </p>
+                <a href="https://github.com/Boitapain/boitapain.github.io" target="_blank">Voir sur GitHub</a>
+            </div>
+        </dialog>
     </section>
     <section id="section5">
         <div id="footer">
@@ -219,7 +272,7 @@
                     <a href="https://github.com/Boitapain">GitHub <img src="icons/contacts/github.png" /></a>
                 </li>
                 <li>
-                    <a href="https://www.linkedin.com/in/vincent-bullion-07786a220/">LinkedIn <img
+                    <a href="https://www.linkedin.com/in/vincent-bullion">LinkedIn <img
                             src="icons/contacts/linkedin.png" /></a>
                 </li>
             </ul>

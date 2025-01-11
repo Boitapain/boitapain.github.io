@@ -71,13 +71,6 @@ section {
     min-height: 100vh;
 }
 
-#section4 {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: auto;
-}
-
 /* Floating menu */
 #floating-menu {
     z-index: 10;

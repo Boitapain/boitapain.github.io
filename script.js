@@ -97,3 +97,27 @@ function applyHoverEffect(event, element) {
         element.style.setProperty("--rotateY", "0deg");
     }
 }
+document.addEventListener('DOMContentLoaded', function() {
+    const projectCards = document.querySelectorAll('.project-card');
+
+    function checkVisibility() {
+        const triggerBottom = window.innerHeight / 5 * 4;
+
+        projectCards.forEach((card, index) => {
+            const cardTop = card.getBoundingClientRect().top;
+
+            if (cardTop < triggerBottom) {
+                if (index % 2 === 0) {
+                    card.classList.add('visible-left');
+                } else {
+                    card.classList.add('visible-right');
+                }
+            } else {
+                card.classList.remove('visible-left', 'visible-right');
+            }
+        });
+    }
+
+    window.addEventListener('scroll', checkVisibility);
+    checkVisibility(); // Initial check
+});
