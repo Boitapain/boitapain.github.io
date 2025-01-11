@@ -26,10 +26,11 @@
 }
 
 #screen-container {
-    /*Handle flex behavior of the continer*/
+    /*Handle flex behavior of the container*/
     display: flex;
     align-items: center;
     justify-content: center;
+    margin: 0 auto; /* Center the container */
 
     /* Position and size of the "screen" */
     width: 70%;
@@ -60,6 +61,7 @@
     #screen-container {
         height: 40vh;
         width: 80%;
+        margin: 0 auto; /* Center the container */
     }
 }
 
@@ -67,5 +69,6 @@
     #screen-container {
         height: 30vh;
         width: 80%;
+        margin: 0 auto; /* Center the container */
     }
 }

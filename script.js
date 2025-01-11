@@ -9,16 +9,33 @@ document.addEventListener("DOMContentLoaded", () => {
         link.addEventListener("click", () => {
             navMenu.classList.toggle("active");
         });
-
     });
 
     menuToggle.addEventListener("click", () => {
         navMenu.classList.toggle("active");
-        document.querySelector('header').style.b
     });
+
+    const projectCards = document.querySelectorAll('.project-card');
+
+    function checkVisibility() {
+        const triggerBottom = window.innerHeight / 5 * 4;
+
+        projectCards.forEach((card) => {
+            const cardTop = card.getBoundingClientRect().top;
+
+            if (cardTop < triggerBottom) {
+                card.style.opacity = '1';
+                card.style.transform = 'translateX(0)';
+            } else {
+                card.style.opacity = '0';
+                card.style.transform = 'translateX(10vh)';
+            }
+        });
+    }
+
+    window.addEventListener('scroll', checkVisibility);
+    checkVisibility(); // Initial check
 });
-
-
 
 window.addEventListener('scroll', () => {
     const scrollPosition = window.scrollY;
@@ -69,7 +86,6 @@ const picture = document.querySelector("#picture");
 const max_angle = 10; // Maximum rotation angle
 const activationHeight = window.innerHeight * 0.8;
 
-let timeout;
 document.addEventListener("mousemove", (e) => {
     applyHoverEffect(e, picture);
 });
@@ -97,27 +113,3 @@ function applyHoverEffect(event, element) {
         element.style.setProperty("--rotateY", "0deg");
     }
 }
-document.addEventListener('DOMContentLoaded', function() {
-    const projectCards = document.querySelectorAll('.project-card');
-
-    function checkVisibility() {
-        const triggerBottom = window.innerHeight / 5 * 4;
-
-        projectCards.forEach((card, index) => {
-            const cardTop = card.getBoundingClientRect().top;
-
-            if (cardTop < triggerBottom) {
-                if (index % 2 === 0) {
-                    card.classList.add('visible-left');
-                } else {
-                    card.classList.add('visible-right');
-                }
-            } else {
-                card.classList.remove('visible-left', 'visible-right');
-            }
-        });
-    }
-
-    window.addEventListener('scroll', checkVisibility);
-    checkVisibility(); // Initial check
-});

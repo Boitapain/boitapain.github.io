@@ -28,6 +28,7 @@
     flex-direction: row;
     margin-top: 10vh;
     justify-content: space-around;
+    margin: 0 auto; /* Center the container */
 }
 
 #picture {
@@ -172,7 +173,7 @@
     #about_container {
         flex-direction: column;
         align-items: center;
-        margin: 0;
+        margin: 0 auto; /* Center the container */
     }
 
     #picture {
