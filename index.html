@@ -248,6 +248,11 @@
                     <h3>Disease Track</h3>
                     <h5>Application ETL pour pandémies</h5>
                 </div>
+                <div class="project-card" onclick="document.getElementById('project4-dialog').showModal()">
+                    <img src="icons/projects/poke-pal_1.png" alt="Projet PokePal une application création partage de page web">
+                    <h3>PokePal</h3>
+                    <h5>Application de création et partage de page web</h5>
+                </div>
                 <div class="project-card" onclick="document.getElementById('project2-dialog').showModal()">
                     <img src="icons/projects/calculo_1.png" alt="Calculo une reproduction de la calculatrice Apple">
                     <h3>Calculo</h3>
@@ -329,6 +334,24 @@
                     <a href="https://github.com/Boitapain/boitapain.github.io" target="_blank"><img
                             src="icons/contacts/github.png" alt="Logo GitHub"
                             style="width: 30px; height: auto;margin-right: 5px;" />Voir sur GitHub</a>
+                </div>
+            </dialog>
+            <dialog id="project4-dialog" class="dialog">
+                <div class="dialog-content">
+                    <span class="close" onclick="document.getElementById('project4-dialog').close()">&times;</span>
+                    <h3>PokePal</h3>
+                    <p>PokePal est une application qui utilise Svelte avec Tailwind CSS / DaisyUI pour le front-end et Supabase pour le back-end. Elle permet à un utilisateur connecté de créer sa page web afin de partager son équipe de Pokémon préférée.</p>
+                    <video controls alt="Vidéo de PokePal">
+                        <source src="https://youtu.be/beXTpwPWahA" type="video/mp4">
+                    </video>
+                    <h4>Compétences :</h4>
+                    <ul>
+                        <li>Svelte</li>
+                        <li>Tailwind CSS</li>
+                        <li>DaisyUI</li>
+                        <li>Supabase</li>
+                    </ul>
+                    <a href="https://poke-pal.vercel.app" target="_blank"><img src="icons/contacts/github.png" alt="Logo GitHub" style="width: 30px; height: auto; margin-right: 5px;" />Voir sur GitHub</a>
                 </div>
             </dialog>
         </section>
